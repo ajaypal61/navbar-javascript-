@@ -1,0 +1,164 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.navbar{
+    /* padding: 0 5rem; */
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e7f5ff;
+}
+
+.logo{
+    background-color: black;
+    color: white;
+    margin: 4rem;
+    height: 2rem;
+    padding: 4px 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.nav{
+    margin: 2rem;
+}
+.navbar-list{
+    display: flex;
+    list-style: none;
+    gap: 4vw;
+}
+
+.navbar-link:link, .navbar-link:visited{
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 500;
+    list-style: none;
+    text-decoration: none;  
+    transition: all 0.3s;
+}
+
+.navbar-link:hover, .navbar-link:active{
+    color: rgb(130, 9, 244);
+}
+
+
+.mobile-navbar-btn{
+    display: none;
+    background: transparent;
+    cursor: pointer;
+    right: 40px;
+}
+
+.mobile-nav-icon{
+    width: 30px;
+    height: 26px;
+    color: black;
+}
+
+.mobile-nav-icon[name='close-outline']{
+    display: none;
+}
+
+
+
+
+/* responsing codes  */
+
+
+
+
+@media (max-width:980px){
+    .mobile-navbar-btn{
+        display: block;
+        z-index: 999;
+        border: 2px solid #212529;
+        border-radius: 6px;
+        /* padding: 1px; */
+        margin: 15px ;
+    }
+
+    .nav{
+        position: relative;
+    }
+
+    .logo{
+        margin: 4rem;
+        /* background: radial-gradient(rgb(44, 18, 161), transparent) */
+    }
+
+    .nav{
+        /* display: none; */
+        width: 100%;
+        height: 100vh;
+        background: #e7f5ff;
+        position: absolute;
+        margin: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+
+        opacity: 0;
+        visibility: 0;
+        pointer-events: none;
+    }
+
+    .navbar-list{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .active .nav{
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .active .mobile-navbar-btn .mobile-nav-icon[name='close-outline']{
+        display: block;
+    }
+
+    .active .mobile-navbar-btn .mobile-nav-icon[name='menu-outline']{
+        display: none;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
